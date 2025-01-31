@@ -1,0 +1,14 @@
+.footer{
+    /* display: flex; */
+    /* align-items: center; */
+    /* justify-content: space-between; */
+    /* width: 100%; */
+    margin-left: 12.56944%;
+    margin-right: 10.34722%;
+    height: 149px;
+    width: 77%;
+    background-color: #fff;
+    position: absolute;
+    bottom:  0px;
+    /* width: 70px; */
+}

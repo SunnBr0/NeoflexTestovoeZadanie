@@ -7,12 +7,12 @@
 
 }
 .iconFavourites{
-    /* width: 62px; */
-    /* height: 60px; */
-    text-align: center;
+    width: 56.266px;
+    height: 60px;
+    /* text-align: center; */
+    /* padding: 10px; */
     display: inline-block;
     margin-right: 5.69px;
-
     /* display: inline-block; */
     /* align-items: center; */
     /* margin-right: 54.4px; */
@@ -27,6 +27,9 @@
 }
 .iconBay{
     display: inline-block;
+    width: 58px;
+    height: 60px;
+    /* text-align: center; */
 }
 .iconCircleFavouritesPart{
     width: 17.4px;
@@ -34,20 +37,10 @@
     position: relative;
     margin: 0px;
     display: inline-block;
-    top:-9px;
-    left: 0px;
-    left: -6.51px;
+    top:-10px;
+    left: -8px;
 }
 /* 1 */
-.iconCircleBayPart{
-    width: 17.4px;
-    height: 17.4px;
-    position: relative;
-    margin: 0px;
-    display: inline-block;
-    top:-11px;
-    right:  -35.51px;
-}
 
 .countFavouritesPart{
     font-family: Montserrat;
@@ -59,9 +52,21 @@
     width:18px ;
     height:16px ;
     position: relative;
-    top:-12.5px;
-    right:  24.1px;    
+
+    top:-34.4px;
+    right:  -13.81px;    
+    text-align: center;
 }
+.iconCircleBayPart{
+    width: 17.4px;
+    height: 17.4px;
+    position: relative;
+    margin: 0px;
+    display: inline-block;
+    top:-12.6px;
+    right:  8px;
+}
+
 .countBayPart{
 
     font-family: Montserrat;
@@ -73,8 +78,12 @@
     width:18px;
     height:16px;
     position: relative;
-    top:-14.25px;
-    right:  -23.51px;
+
+    top:-37.8px;
+    right:  -14.81px;    
+    text-align: center;
+    /* top:-14.25px; */
+    /* right:  -23.51px; */
 }
 .navigate{
     display: flex;
@@ -96,7 +105,9 @@
 .containerIconFavouritesBay{
     display: flex;
     justify-content: end;
-    align-items: center;
+    /* padding-top: 41px; */
+    padding-top: 40.762px;
+    /* align-items: center; */
     width: 119.4px;
     height: 60px;
     margin-right: 0px;
