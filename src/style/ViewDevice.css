@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,400,500,600,700&display=swap');
+
+/* .containersItemDevice { */
+/* background-color: #ffffff; */
+/* display: flex; */
+/* border-radius: 30px ; */
+/* justify-content: space-between; */
+/* } */
+.itemDevice {
+    display: inline-block;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 30px;
+    width: 350px;
+    height: 407px;
+}
+
+.infoDevice {
+    display: flex;
+    flex-direction: column;
+    width: 310.04px;
+    height: 74px;
+    margin-right: 18px;
+    margin-left: 21.96px;
+    margin-bottom: 26.65px;
+    /* background-color: aquamarine; */
+    justify-content: space-between;
+}
+
+.infoDevice img {
+    margin: 0px;
+    width: 23.33px;
+    height: 21.93px;
+    display: inline-block;
+}
+
+.nameDevice {
+    font-family: Montserrat;
+    font-style: normal;
+    font-size: 17px;
+    color: #1C1C27;
+    font-weight: 600;
+}
+
+.bayDevice {
+    font-family: Montserrat;
+    font-style: normal;
+    font-size: 17px;
+    color: #1C1C27;
+    font-weight: 600;
+    /* display: inline-block; */
+    /* text-align: right; */
+}
+
+.currentPriceDevice {
+    font-family: Montserrat;
+    font-style: normal;
+    font-size: 17px;
+    color: #FFA542;
+    font-weight: 600;
+
+}
+
+.earlyPriceDevice {
+    font-family: Montserrat;
+    font-style: normal;
+    font-size: 13px;
+    color: #FFCE7F;
+    font-weight: 600;
+    text-decoration: line-through;
+    text-align: center;
+    /* margin-left: 15px; */
+}
+
+.rateDevice {
+    font-family: Montserrat;
+    font-style: normal;
+    font-size: 17px;
+    color: #838383;
+    font-weight: 600;
+    margin-left: 10px;
+}
+
+img {
+    margin-top: 15.07px;
+    margin-right: 64.51px;
+    margin-left: 65.88px;
+    margin-bottom: 54.2px;
+    width: 237px;
+    height: 219.61px;
+}
+
+.blockRateDevice {
+    /* display: inline-block; */
+    display: flex;
+    align-items: center;
+    margin-bottom: 6px;
+
+}
+
+.namePriceDevice {
+    display: flex;
+    justify-content: space-between;
+}
+
+.infoPriceDevice {
+    display: flex;
+    flex-direction: column;
+}
+
+.rateBayDevice {
+    /* margin-top: 10px; */
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
