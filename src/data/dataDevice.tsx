@@ -1,5 +1,5 @@
 // import airpods from '../components/assets/S852.png'
-const headPhones = [
+const headPhones:any = [
 {
     img: "./assets/S852.png",
     title : "Apple BYZ S852I",
@@ -38,7 +38,7 @@ const headPhones = [
 }
 ];
 
-const wirelessHeadPhone = [
+const wirelessHeadPhone:any = [
     {
         img: "./assets/earpodsLock.png",
         title : "Apple AirPods",

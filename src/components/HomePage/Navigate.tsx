@@ -1,13 +1,35 @@
-import React from "react";
-import "../style/Navigate.css"
+import React, { useEffect, useState } from "react";
+import "../../style/Navigate.css"
 
-function Navigate() {
+// let buyValue: number = 0;
+interface BuyCount {
+  buyCount: number;
+}
+const  Navigate:React.FC<BuyCount> =({buyCount})=>{
   let likes: number = 0;
-  let buyValue: number = 0;
+  // let [countValue,setCountValue] = useState(0);
+  // countValueSet(4);
+  // buyValue = countValue;
+  // console.log(count)
+  // sessionStorage.clear()
+  // countValueSet(Number(count))
+
+  // useEffect(()=>{
+  //   let count : string|null = sessionStorage.getItem("sendDataProduct");
+  //   if (count !== null) {
+  //     setCountValue(Number(count));
+  //   }
+  //   // buyValue = Number(count)
+  // })
+
+  // function test(){
+  //   setCountValue(++buyValue)
+  // }
+
   return (
     <div className="header">
       <div className="navigate">
-        <span className="nameBrandText">QPICK</span>
+        <span className="nameBrandText" >QPICK</span>
         <div className="containerIconFavouritesBay">
           <div className="iconFavourites">
             <img className="iconFavouritesPart" src="./assets/Favourites.svg" alt="" />
@@ -20,10 +42,10 @@ function Navigate() {
           </div>
           <div className="iconBay">
             <img className="iconBayPart" src="./assets/Bay.svg" alt="" />
-            {buyValue > 0 ?
+            {buyCount > 0 ?
               <>
                 <img className="iconCircleBayPart" src="./assets/Circle.svg" alt="" />
-                <span className="countBayPart">{buyValue}</span>
+                <span className="countBayPart">{buyCount}</span>
               </> : <></>
             }
           </div>
@@ -32,5 +54,6 @@ function Navigate() {
     </div>
   );
 }
+
 
 export default Navigate;

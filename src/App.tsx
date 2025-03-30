@@ -1,20 +1,19 @@
 import React from 'react';
 import logo from './logo.svg';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css';
-import Navigate from './components/Navigate';
-// import Main from './components/Main'
-import Footer from './components/Footer';
-import DeviceList from './components/DeviceList';
+import HomePage from './components/HomePage/HomePage';
+import BuyPage from './components/BuyPage/BuyPage';
 function App() {
   return (
-    <div>
-      {/* <Main /> */}
-      <Navigate />
-      <DeviceList />
-      <Footer />
-    </div>
-
+    <Router>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/buy" element={<BuyPage />} />
+      </Routes>
+    </Router>
+    
   );
 }
-
+// новое ,не использовались оригинал 
 export default App;
