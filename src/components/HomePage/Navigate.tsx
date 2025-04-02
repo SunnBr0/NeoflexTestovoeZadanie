@@ -10,9 +10,9 @@ const Navigate: React.FC = () => {
   //   console.log(countBuy)
 
   // },1000)
-  useEffect(()=>{
-    console.log(countBuy)
-  },[countBuy])
+  // useEffect(()=>{
+  //   console.log(countBuy)
+  // },[countBuy])
   return (
     <div className="header">
       <div className="navigate">
