@@ -1,17 +1,13 @@
-import React from "react";
-import DeviceList from "./DeviceList";
-import "../../style/Main.css"
+// import React from "react";
+// import DeviceList from "./DeviceList";
 
-interface MainProps {
-    setBuyCount: React.Dispatch<React.SetStateAction<number>>;
-}
-const Main: React.FC<MainProps> = ({ setBuyCount }) =>{
-    return (
-        <div className="devMain">
-            <DeviceList setBuyCount={setBuyCount}/>
-        </div>
-    );
-}
+// const Main: React.FC = () =>{
+//     return (
+//         <div className="devMain">
+//             <DeviceList/>
+//         </div>
+//     );
+// }
 
 
-export default Main;
+// export default Main;
