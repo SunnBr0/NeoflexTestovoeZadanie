@@ -1,11 +1,11 @@
 import React, { useContext, useEffect, useState } from "react";
 import "../../style/Navigate.css";
-import { ValueBuyContext } from "./ViewDevice";
+import { ValueBuyContext } from "./HomePage";
 
 const Navigate: React.FC = () => {
-  let likes: number = 1;
-  let valueBuy: number = 1;
-  let countBuy = useContext(ValueBuyContext)
+  // let likes: number = 1;
+  // let valueBuy: number = 1;
+  // let countBuy = useContext(ValueBuyContext);
   // setInterval(()=>{
   //   console.log(countBuy)
 
@@ -13,6 +13,7 @@ const Navigate: React.FC = () => {
   // useEffect(()=>{
   //   console.log(countBuy)
   // },[countBuy])
+  const {clickCounts}:any = useContext(ValueBuyContext);
   return (
     <div className="header">
       <div className="navigate">
@@ -24,27 +25,27 @@ const Navigate: React.FC = () => {
               src="./assets/Favourites.svg"
               alt=""
             />
-            {likes > 0 && (
+            {clickCounts.like > 0 && (
               <>
                 <img
                   className="iconCircleFavouritesPart"
                   src="./assets/Circle.svg"
                   alt=""
                 />
-                <span className="countFavouritesPart">{likes}</span>
+                <span className="countFavouritesPart">{clickCounts.like}</span>
               </>
             )}
           </div>
           <div className="iconBay">
             <img className="iconBayPart" src="./assets/Bay.svg" alt="" />
-            {valueBuy > 0 && (
+            {clickCounts.buy > 0 && (
               <>
                 <img
                   className="iconCircleBayPart"
                   src="./assets/Circle.svg"
                   alt=""
                 />
-                <span className="countBayPart">{valueBuy}</span>
+                <span className="countBayPart">{clickCounts.buy}</span>
               </>
             )}
           </div>

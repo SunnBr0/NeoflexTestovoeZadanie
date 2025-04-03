@@ -1,6 +1,7 @@
 import React, { createContext, useContext, useState } from "react";
 import { headPhones } from "../../data/dataDevice";
 import "../../style/ViewDevice.css";
+import { ValueBuyContext } from "./HomePage";
 
 
 let countAllProduct: number = 0;
@@ -27,22 +28,6 @@ interface jsonProduct {
   count: number;
 }
 
-// function simpleHash(title: string, price: number, img: string): number {
-//   // Преобразуем строки в числовые значения
-//   let hash = 0;
-//   const data = `${title}${price}${img}`;
-
-//   for (let i = 0; i < data.length; i++) {
-//     const charCode = data.charCodeAt(i);
-//     // Простая формула хеширования
-//     hash = (hash << 5) - hash + charCode;
-//     hash |= 0; // Преобразуем в 32-битное целое число
-//   }
-
-//   return hash;
-// }
-const ValueBuyContext = createContext(0)
-
 const ViewDevice: React.FC<DeviceListProps> = ({ devices }) => {
   // function sendDataProduct(id: number, title: string, price: number, srcImg: string) {
   //   const hash = simpleHash(title,price, srcImg);
@@ -53,14 +38,14 @@ const ViewDevice: React.FC<DeviceListProps> = ({ devices }) => {
   //     srcImg: srcImg,
   //     count: 1
   //   };
-  //   let productExists = false;
-  //   for (let i = 0; i < arrProduct.length; i++) {
-  //     if (arrProduct[i].id === hash) {
-  //       ++arrProduct[i].count;
-  //       productExists = true;
-  //       break;
-  //     }
-  //   }
+    // let productExists = false;
+    // for (let i = 0; i < arrProduct.length; i++) {
+    //   if (arrProduct[i].id === hash) {
+    //     ++arrProduct[i].count;
+    //     productExists = true;
+    //     break;
+    //   }
+    // }
 
   //   if (!productExists) {
   //       arrProduct.push(jsonProduct);
@@ -76,15 +61,12 @@ const ViewDevice: React.FC<DeviceListProps> = ({ devices }) => {
   //   console.log(arrProduct.length);
   // }
   // const valueBuy = useContext()
-  const [ countBuy,setCountBuy] = useState(0)
+  // const [ countBuy,setCountBuy] = useState(0)
 
-  // function addBuyCount(){
-  //   setCountBuy((prev)=>++prev)
-  // }
-  // console.log(countBuy)
+  const {handleClickCount}:any = useContext(ValueBuyContext);
   return (
     <>
-    <ValueBuyContext.Provider value={countBuy}>
+    {/* <ValueBuyContext.Provider value={countBuy}> */}
       {devices.map((device: Device, index: number) => (
         <div key={index} className="itemDevice">
           <img src={device.img} alt={device.title} />
@@ -109,14 +91,14 @@ const ViewDevice: React.FC<DeviceListProps> = ({ devices }) => {
                 <img src="./assets/star.png" alt="" />
                 <span className="rateDevice">{device.rate}</span>
               </div>
-              <button className="bayDevice" onClick={()=>setCountBuy((value)=>++value)}>Купить</button>
+              <button className="bayDevice" onClick={()=>handleClickCount("buy",device)}>Купить</button>
             </div>
           </div>
         </div>
       ))}
-      </ValueBuyContext.Provider>
+      {/* </ValueBuyContext.Provider> */}
     </>
   );
 };
 
-export {ViewDevice,ValueBuyContext};
+export {ViewDevice};
