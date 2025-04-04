@@ -1,4 +1,4 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useEffect, useState } from "react";
 import Navigate from "./Navigate";
 import Footer from "./Footer";
 import MainDeviceList from "./MainDeviceList";
@@ -19,6 +19,7 @@ interface Device {
 }
 let tempId: number;
 let arrProduct: Array<Device> = [];
+let mapItemDevice = new Map<Object, number>();
 const ValueBuyContext = createContext({});
 const HomePage: React.FC = () => {
   // const [buyCount, setBuyCount] = useState(0);
@@ -33,25 +34,44 @@ const HomePage: React.FC = () => {
     // let countAllProduct: number = 0;
     // let temp: jsonProduct;
     // let indexDuplicate;
-    console.log(arrProduct);
+    // console.log(arrProduct);
 
-    let productExists: boolean = false;
-    for (let i = 0; i < arrProduct.length; i++) {
-      if (arrProduct[i].id === tempId) {
-        ++arrProduct[i].count;
-        productExists = true;
-        break;
-      }
+    // let productExists: boolean = false;
+    // for (let i = 0; i < arrProduct.length; i++) {
+    //   if (arrProduct[i].id === tempId) {
+    //     ++arrProduct[i].count;
+    //     productExists = true;
+    //     break;
+    //   }
+    // }
+    // if (!productExists) {
+    //   arrProduct.push(itemDevice);
+    // }
+    // tempId = itemDevice.id;
+    // map.set(itemDevice,1)
+    const storedData = sessionStorage.getItem("deviceClickCounts");
+    if (storedData) {
+      const parsedData: Array<[Device, number]> = JSON.parse(storedData);
+
+      mapItemDevice = new Map(parsedData);
     }
-    if (!productExists) {
-      arrProduct.push(itemDevice);
+    if (buttonType === "buy") {
+      const currentCountItemDevice = mapItemDevice.get(itemDevice) || 0;
+      mapItemDevice.set(itemDevice, currentCountItemDevice + 1);
+      const mapData = Array.from(mapItemDevice.entries());
+      sessionStorage.setItem("deviceClickCounts", JSON.stringify(mapData));
     }
-    tempId = itemDevice.id;
+    // console.log( sessionStorage.getItem('deviceClickCounts') )
+    // sessionStorage.setItem('test', String(mapItemDevice));
+    // sessionStorage.clear()
     setClickCounts((prevCounts) => ({
       ...prevCounts,
       [buttonType]: prevCounts[buttonType] + 1,
     }));
+    // window.dispatchEvent(new Event('storage'));
+
   }
+
   return (
     <ValueBuyContext.Provider value={{ clickCounts, handleClickCount }}>
       <div className="devPage">

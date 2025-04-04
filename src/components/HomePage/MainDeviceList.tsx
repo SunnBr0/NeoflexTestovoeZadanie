@@ -2,7 +2,6 @@ import React from 'react';
 import { headPhones, wirelessHeadPhone, devicesItems } from '../../data/dataDevice';
 import {ViewDevice} from './ViewDevice';
 import "../../style/MainDeviceList.css"
-import "../../style/Main.css"
 
 
 
