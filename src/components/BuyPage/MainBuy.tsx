@@ -6,8 +6,15 @@ function MainBuy() {
     <>
       <div className="mainDevice">
         <span className="nameDevice">Корзина</span>
-        <ItemBuyDevice/>
-
+        <div className="containerItemsDeviceAnd">
+          <div className="containerItemsDevice">
+            <ItemBuyDevice />
+            <ItemBuyDevice />
+          </div>
+          <div className="containerFinalPrice">
+            <div className="cart"></div>
+          </div>
+        </div>
       </div>
     </>
   );

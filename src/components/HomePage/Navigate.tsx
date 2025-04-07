@@ -46,7 +46,7 @@ const Navigate: React.FC = () => {
   return (
     <div className="header">
       <div className="navigate">
-        <span className="nameBrandText">QPICK</span>
+      <a href="/" style={{textDecoration: "none"}}><span className="nameBrandText">QPICK</span></a>
         <div className="containerIconFavouritesBay">
           <div className="iconFavourites">
             <img
