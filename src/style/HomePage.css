@@ -1,5 +1,11 @@
-/* .devPage{ */
+.devPage{ 
+    /* height: 1000px; */
+    /* min-height: 100vh; */
     /* min-height: 100%; */
-    /* display: flex; */
-    /* flex-direction: column; */
-/* } */
+    /* margin-top: auto; */
+    display: flex; 
+    flex-direction: column;
+    /* gap: 29px; */
+    justify-content:space-between ;
+    height: 100vh;
+} 

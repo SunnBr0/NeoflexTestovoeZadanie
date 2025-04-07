@@ -1,17 +1,59 @@
-/* .mainDevice { */
-    /* border: 10px solid black; */
-    /* display: flex;
-    flex-wrap: wrap; */
-    /* margin-left: 12.56944%;
-    margin-right: 10.34722%;
-    margin-top: 28px; */
-/* } */
-.nameDevice{
-    margin-bottom: 13px;
-    display: block;
-    color: #1C1C27;
+.mainDevice {
+  flex: 1 1 auto;
 }
-.containerItemsDevice{
-    display: flex;
-    flex-direction: column;
+.nameDevice {
+  margin-bottom: 13px;
+  display: block;
+  color: #1c1c27;
+}
+.containerItemsDevice {
+  display: flex;
+  flex-direction: column;
+}
+.containerItemsDeviceAndPrice {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.cartBlockPrice {
+  width: 348.98px;
+  height: 114px;
+  background: #ffffff;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 30px;
+}
+.infoFinalPrice {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 21.43px;
+  padding-right: 16.33px;
+  padding-top: 21px;
+}
+.infoFinalPrice span {
+  /* flex-direction: row ; */
+  /* justify-content: center; */
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 18px;
+  color: #000000;
+  /* margin: 20px; */
+}
+.containerFinalPrice button {
+  position: relative;
+  background-color: #101010;
+  color: #ffffff;
+  border: none;
+  border-radius: 20px;
+  width: 348.98px;
+  height: 65px;
+  cursor: pointer;
+  top: -59px;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 17px;
+  line-height: 21px;
+  text-align: center;
 }
