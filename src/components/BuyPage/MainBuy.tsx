@@ -4,13 +4,14 @@ import ItemBuyDevice from "./ItemBuyDevice";
 function MainBuy() {
   return (
     <>
+    {/* {console.log(sessionStorage.getItem("deviceClickCounts"))} */}
       <div className="mainDevice">
         <span className="nameDevice" style={{marginTop:"29px"}}>Корзина</span>
         <div className="containerItemsDeviceAndPrice">
           <div className="containerItemsDevice">
-            <ItemBuyDevice />
-            <ItemBuyDevice />
-            <ItemBuyDevice />
+            {/* <ItemBuyDevice /> */}
+            {/* <ItemBuyDevice /> */}
+            {/* <ItemBuyDevice /> */}
           </div>
           <div className="containerFinalPrice">
             <div className="cartBlockPrice">

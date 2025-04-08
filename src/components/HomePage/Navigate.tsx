@@ -1,6 +1,5 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../../style/Navigate.css";
-import { ValueBuyContext } from "./HomePage";
 interface Device {
   id: number;
   img: string;
@@ -10,43 +9,27 @@ interface Device {
   discountPrice?: number;
 }
 const Navigate: React.FC = () => {
-
-  // setInterval(()=>{
-  //   console.log(countBuy)
-
-  // },1000)
-  // useEffect(()=>{
-  //   // countBuy = 
-  //   // sessionStorage.clear()
-
-  
-  // },[])
-  const {clickCounts}:any = useContext(ValueBuyContext);
-  const [likes,setLikes]=useState(0)
-  const [valueBuy,setValueBuy]=useState(0)
-  useEffect(()=>{
-    const storedData = sessionStorage.getItem('deviceClickCounts')
+  const [likes, setLikes] = useState(0);
+  const [valueBuy, setValueBuy] = useState(0);
+  useEffect(() => {
+    const storedData = sessionStorage.getItem("deviceClickCounts");
     // console.log( storedData )
-    let sumCount = 0
+    let sumCount = 0;
     if (storedData) {
-      
       const parsedData: Array<[Device, number]> = JSON.parse(storedData);
-      parsedData.forEach(([device,count])=>{
-        sumCount += count
-      })
-      // console.log('Общее количество:', sumCount);
+      parsedData.forEach(([device, count]) => {
+        sumCount += count;
+      });
     }
-    setValueBuy(sumCount)
-  },)
-  // let countlikes: number  =clickCounts.like;
-  // let valueBuy: number =  clickCounts.buy;
-  // let countlikes: number  =0;
-  // let valueBuy: number =  0;
-  // console.log( sessionStorage.getItem('deviceClickCounts') )
+    setValueBuy(sumCount);
+  },);
+
   return (
     <div className="header">
       <div className="navigate">
-      <a href="/" style={{textDecoration: "none"}}><span className="nameBrandText">QPICK</span></a>
+        <a href="/" style={{ textDecoration: "none" }}>
+          <span className="nameBrandText">QPICK</span>
+        </a>
         <div className="containerIconFavouritesBay">
           <div className="iconFavourites">
             <img
@@ -66,7 +49,9 @@ const Navigate: React.FC = () => {
             )}
           </div>
           <div className="iconBay">
-          <a href="buy"><img className="iconBayPart" src="./assets/Bay.svg" alt="" /></a>
+            <a href="buy">
+              <img className="iconBayPart" src="./assets/Bay.svg" alt="" />
+            </a>
             {valueBuy > 0 && (
               <>
                 <img
