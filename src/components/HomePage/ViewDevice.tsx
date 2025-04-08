@@ -14,13 +14,6 @@ interface Device {
 interface DeviceListProps {
   devices: Device[];
 }
-interface jsonProduct {
-  id: number;
-  title: string;
-  price: number;
-  srcImg: string;
-  count: number;
-}
 
 const ViewDevice: React.FC<DeviceListProps> = ({ devices }) => {
   const { handleClickCount }: any = useContext(ValueClick);

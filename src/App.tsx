@@ -19,6 +19,7 @@ function App() {
     const storedData = sessionStorage.getItem("deviceClickCounts");
     if (storedData) {
       const parsedData: Array<[number, number]> = JSON.parse(storedData);
+      // console.log(parsedData)
       mapItemDevice = new Map(parsedData);
 
     }

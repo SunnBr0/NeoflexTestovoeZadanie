@@ -1,16 +1,17 @@
 import React from "react";
 import "../../style/MainBuy.css";
-import ItemBuyDevice from "./ItemBuyDevice";
+import ItemsBuyDevice from "./ItemsBuyDevice";
 function MainBuy() {
   return (
     <>
-    {/* {console.log(sessionStorage.getItem("deviceClickCounts"))} */}
       <div className="mainDevice">
-        <span className="nameDevice" style={{marginTop:"29px"}}>Корзина</span>
+        <span className="nameDevice" style={{ marginTop: "29px" }}>
+          Корзина
+        </span>
         <div className="containerItemsDeviceAndPrice">
           <div className="containerItemsDevice">
             {/* <ItemBuyDevice /> */}
-            {/* <ItemBuyDevice /> */}
+            <ItemsBuyDevice/>
             {/* <ItemBuyDevice /> */}
           </div>
           <div className="containerFinalPrice">
