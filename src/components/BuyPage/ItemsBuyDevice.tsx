@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "../../style/ItemsBuyDevice.css";
 import { devicesItems } from "../../data/dataDevice";
 let parsedData: Array<[number, number]>;
+let a:number = 0;
 interface Device {
   id: number;
   img: string;
@@ -11,24 +12,45 @@ interface Device {
   discountPrice?: number;
 }
 function ItemsBuyDevice() {
-  const [valueType, setValueType] = useState();
+  const [valueType, setValueType] = useState("");
   const storedData = sessionStorage.getItem("deviceClickCounts");
   if (storedData) {
     parsedData = JSON.parse(storedData);
   }
-
+  // useEffect(()=>{
+  //   const storedData = sessionStorage.getItem("deviceClickCounts");
+  // if (storedData) {
+  //   parsedData = JSON.parse(storedData);
+  // }
+  // },)
   function handleClickBuy(type: string,id:number) {
-    console.log(id)
-    if (type === "add") {
-      const updatedData  = parsedData.map(([idCurrent,value])=>{
-        if (idCurrent === id) {
-          return [idCurrent,value+1]
+    setValueType(type); // Устанавливаем тип действия
+    parsedData = parsedData.map(([currentId, value]) => {
+      if (currentId === id) {
+        if (valueType === "add") {
+          return [currentId, value + 1];
+        } else if (valueType === "remove" && value > 0) {
+          return [currentId, value - 1];
         }
-        return [idCurrent,value]
-      })
-      sessionStorage.setItem("deviceClickCounts",JSON.stringify(updatedData))
-    }
+      }
+      return [currentId, value];
+    }); // Убираем удаленные элементы
+    sessionStorage.setItem("deviceClickCounts", JSON.stringify(parsedData));
     console.log(parsedData)
+    // // console.log(id)
+    // // setValueType(type)
+    // if (type === "add") {
+    //   // const updatedData  = parsedData.map(([idCurrent,value])=>{
+    //   //   if (idCurrent === id) {
+    //   //     return [idCurrent,value+1]
+    //   //   }
+    //   //   return [idCurrent,value]
+    //   // })
+    //   // sessionStorage.setItem("deviceClickCounts",JSON.stringify(updatedData))
+    // } else if(type === "remove"){
+
+    // }
+    // console.log(parsedData)
   }
 
   return (
@@ -62,6 +84,8 @@ function ItemsBuyDevice() {
                                 </svg>
                               </button>
                               <span>{values}</span>
+                              {/* <span>{a}</span> */}
+                              
                               <button
                                 className="Button"
                                 onClick={() => handleClickBuy("add",item.id)}
