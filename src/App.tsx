@@ -1,5 +1,4 @@
-import React, { createContext, useEffect, useState } from "react";
-import logo from "./logo.svg";
+import React, { createContext, useState } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./App.css";
 import { HomePage } from "./components/HomePage/HomePage";
@@ -20,14 +19,12 @@ function App() {
     const storedData = sessionStorage.getItem("deviceClickCounts");
     if (storedData) {
       const parsedData: Array<[number, number]> = JSON.parse(storedData);
-      // console.log(parsedData)
       mapItemDevice = new Map(parsedData);
 
     }
     if (buttonType === "buy") {
       const currentCountItemDevice = mapItemDevice.get(idDevice) || 0;
       mapItemDevice.set(idDevice, currentCountItemDevice + 1);
-      console.log(mapItemDevice);
       const mapData = Array.from(mapItemDevice.entries());
       sessionStorage.setItem("deviceClickCounts", JSON.stringify(mapData));
     }

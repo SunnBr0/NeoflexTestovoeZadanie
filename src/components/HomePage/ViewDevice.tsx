@@ -1,5 +1,4 @@
-import React, { createContext, useContext, useState } from "react";
-import { headPhones } from "../../data/dataDevice";
+import React, { useContext } from "react";
 import "../../style/ViewDevice.css";
 import { ValueClick } from "../../App";
 

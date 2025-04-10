@@ -30,15 +30,12 @@
   padding-top: 21px;
 }
 .infoFinalPrice span {
-  /* flex-direction: row ; */
-  /* justify-content: center; */
   font-family: "Montserrat";
   font-style: normal;
   font-weight: 600;
   font-size: 15px;
   line-height: 18px;
   color: #000000;
-  /* margin: 20px; */
 }
 .containerFinalPrice button {
   position: relative;

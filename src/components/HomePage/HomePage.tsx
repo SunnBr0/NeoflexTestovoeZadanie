@@ -1,4 +1,4 @@
-import React, { createContext, useEffect, useState } from "react";
+import React from "react";
 import Navigate from "./Navigate";
 import Footer from "./Footer";
 import MainDeviceList from "./MainDeviceList";

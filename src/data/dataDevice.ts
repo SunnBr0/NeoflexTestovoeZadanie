@@ -76,8 +76,8 @@ interface Device {
   rate: number;
   discountPrice?: number;
 }
-const devicesItems:{ [key: string]: Array<Device> }= {
-  "Наушники": headPhones,
+const devicesItems: { [key: string]: Array<Device> } = {
+  Наушники: headPhones,
   "Беспроводные наушники": wirelessHeadPhone,
 };
 export { headPhones, wirelessHeadPhone, devicesItems };

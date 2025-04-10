@@ -42,11 +42,9 @@
   color: #000000;
 }
 .Button {
-  /* margin: 0; */
   padding: 0px 0px 0px 0px;
   width: 30px;
   height: 30px;
-  /* color: #FFFFFF; */
   cursor: pointer;
   background-color: #ffce7f;
   border: 0px solid black;
@@ -69,7 +67,6 @@
   font-size: 17px;
   line-height: 21px;
   color: #1c1c27;
-  /* margin-bottom: 12px; */
 }
 .itemBuyCartPrice {
   font-family: "Montserrat";
@@ -100,9 +97,9 @@
   color: #1c1c27;
 }
 .itemBuyCarDeletePrice button {
-   margin: 0;
-   padding: 0px 0px 0px 0px;
-   cursor: pointer;
-   background-color: #ffffff;
-   border: 0px solid black;
+  margin: 0;
+  padding: 0px 0px 0px 0px;
+  cursor: pointer;
+  background-color: #ffffff;
+  border: 0px solid black;
 }

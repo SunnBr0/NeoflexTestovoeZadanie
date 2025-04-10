@@ -9,11 +9,11 @@ interface Device {
   discountPrice?: number;
 }
 const Navigate: React.FC = () => {
+  // на будущее,если лайки реализовывать
   const [likes, setLikes] = useState(0);
   const [valueBuy, setValueBuy] = useState(0);
   useEffect(() => {
     const storedData = sessionStorage.getItem("deviceClickCounts");
-    // console.log( storedData )
     let sumCount = 0;
     if (storedData) {
       const parsedData: Array<[Device, number]> = JSON.parse(storedData);

@@ -1,19 +1,10 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect } from "react";
 import "../../style/ItemsBuyDevice.css";
 import { devicesItems } from "../../data/dataDevice";
 import { ValueClick } from "../../App";
 let parsedData: Array<[number, number]>;
-interface Device {
-  id: number;
-  img: string;
-  title: string;
-  price: number;
-  rate: number;
-  discountPrice?: number;
-}
 function ItemsBuyDevice({ setFinalSum }: any) {
   const { handleClickCount }: any = useContext(ValueClick);
-  //handleClickCount("buy", device.id)
   const storedData = sessionStorage.getItem("deviceClickCounts");
   if (storedData) {
     parsedData = JSON.parse(storedData);
@@ -26,7 +17,6 @@ function ItemsBuyDevice({ setFinalSum }: any) {
       // Проходим по всем категориям в devicesItems
       Object.keys(devicesItems).forEach((category) => {
         // Ищем устройство в текущей категории
-
         const device = devicesItems[category].find(
           (item) => item.id === deviceId
         );
@@ -59,7 +49,6 @@ function ItemsBuyDevice({ setFinalSum }: any) {
         (item): item is [number, number] => item !== undefined && item[1] > 0
       ); // Фильтруем undefined и те элементы, у которых value <= 0
 
-    console.log(parsedData);
     sessionStorage.setItem("deviceClickCounts", JSON.stringify(parsedData));
     calculateTotalSum();
   }
@@ -176,8 +165,6 @@ function ItemsBuyDevice({ setFinalSum }: any) {
               .flat();
           })
           .flat()}
-
-      {}
     </>
   );
 }

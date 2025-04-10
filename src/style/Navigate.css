@@ -1,113 +1,93 @@
-/* @import url('https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,400,500,600,700&display=swap'); */
-
-.iconFavouritesPart{
-    width: 22px;
-    height: 20px;
-    margin: 0px;
-
+.iconFavouritesPart {
+  width: 22px;
+  height: 20px;
+  margin: 0px;
 }
-.iconFavourites{
-    width: 56.266px;
-    height: 60px;
-    /* text-align: center; */
-    /* padding: 10px; */
-    display: inline-block;
-    margin-right: 5.69px;
-    /* display: inline-block; */
-    /* align-items: center; */
-    /* margin-right: 54.4px; */
-
+.iconFavourites {
+  width: 56.266px;
+  height: 60px;
+  display: inline-block;
+  margin-right: 5.69px;
 }
-.iconBayPart{
-    width: 23.2px;
-    height: 23.2px;
-    margin: 0px;
+.iconBayPart {
+  width: 23.2px;
+  height: 23.2px;
+  margin: 0px;
 }
 
-.iconBay{
-    display: inline-block;
-    width: 58px;
-    height: 60px;
-    /* text-align: center; */
+.iconBay {
+  display: inline-block;
+  width: 58px;
+  height: 60px;
 }
-.iconCircleFavouritesPart{
-    width: 17.4px;
-    height: 17.4px;
-    position: relative;
-    margin: 0px;
-    display: inline-block;
-    top:-10px;
-    left: -8px;
-}
-/* 1 */
-
-.countFavouritesPart{
-    font-family: Montserrat;
-    font-style: normal;
-    font-size: 15px;
-    color: #ffffff;
-    font-weight: 500;
-    display: inline-block;
-    width:18px ;
-    height:16px ;
-    position: relative;
-
-    top:-34.4px;
-    right:  -13.81px;    
-    text-align: center;
-}
-.iconCircleBayPart{
-    width: 17.4px;
-    height: 17.4px;
-    position: relative;
-    margin: 0px;
-    display: inline-block;
-    top:-12.6px;
-    right:  8px;
+.iconCircleFavouritesPart {
+  width: 17.4px;
+  height: 17.4px;
+  position: relative;
+  margin: 0px;
+  display: inline-block;
+  top: -10px;
+  left: -8px;
 }
 
-.countBayPart{
+.countFavouritesPart {
+  font-family: Montserrat;
+  font-style: normal;
+  font-size: 15px;
+  color: #ffffff;
+  font-weight: 500;
+  display: inline-block;
+  width: 18px;
+  height: 16px;
+  position: relative;
+  top: -34.4px;
+  right: -13.81px;
+  text-align: center;
+}
+.iconCircleBayPart {
+  width: 17.4px;
+  height: 17.4px;
+  position: relative;
+  margin: 0px;
+  display: inline-block;
+  top: -12.6px;
+  right: 8px;
+}
 
-    font-family: Montserrat;
-    font-style: normal;
-    font-size: 15px;
-    color: #ffffff;
-    font-weight: 500;
-    display: inline-block;
-    width:18px;
-    height:16px;
-    position: relative;
-
-    top:-37.8px;
-    right:  -14.81px;    
-    text-align: center;
-    /* top:-14.25px; */
-    /* right:  -23.51px; */
+.countBayPart {
+  font-family: Montserrat;
+  font-style: normal;
+  font-size: 15px;
+  color: #ffffff;
+  font-weight: 500;
+  display: inline-block;
+  width: 18px;
+  height: 16px;
+  position: relative;
+  top: -37.8px;
+  right: -14.81px;
+  text-align: center;
 }
-.navigate{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    /* width: 100%; */
-    margin-left: 11.4583%;
-    margin-right: 11.4583%;
-    height: 60px;
-    /* width: 70px; */
+.navigate {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 11.4583%;
+  margin-right: 11.4583%;
+  height: 60px;
 }
-.nameBrandText{
-    font-family: Montserrat;
-    font-style: normal;
-    font-size: 25px;
-    color: #101010;
-    font-weight: 700;
+.nameBrandText {
+  font-family: Montserrat;
+  font-style: normal;
+  font-size: 25px;
+  color: #101010;
+  font-weight: 700;
 }
-.containerIconFavouritesBay{
-    display: flex;
-    justify-content: end;
-    /* padding-top: 41px; */
-    padding-top: 40.762px;
-    /* align-items: center; */
-    width: 119.4px;
-    height: 60px;
-    margin-right: 0px;
+.containerIconFavouritesBay {
+  display: flex;
+  justify-content: end;
+  padding-top: 40.762px;
+  width: 119.4px;
+  height: 60px;
+  margin-right: 0px;
 }
