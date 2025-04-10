@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./App.css";
 import { HomePage } from "./components/HomePage/HomePage";
 import BuyPage from "./components/BuyPage/BuyPage";
+import PayCard from "./components/BuyListDevice/PayCard";
 interface ClickCounts {
   buy: number;
   like: number;
@@ -30,7 +31,6 @@ function App() {
       const mapData = Array.from(mapItemDevice.entries());
       sessionStorage.setItem("deviceClickCounts", JSON.stringify(mapData));
     }
-    // sessionStorage.clear()
     setClickCounts((prevCounts) => ({
       ...prevCounts,
       [buttonType]: prevCounts[buttonType] + 1,
@@ -42,6 +42,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/buy" element={<BuyPage />} />
+          <Route path="/buyListDevice" element={<PayCard />} />
         </Routes>
       </Router>
     </ValueClick.Provider>

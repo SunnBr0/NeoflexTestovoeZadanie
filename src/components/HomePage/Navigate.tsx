@@ -20,9 +20,11 @@ const Navigate: React.FC = () => {
       parsedData.forEach(([device, count]) => {
         sumCount += count;
       });
+      
     }
     setValueBuy(sumCount);
-  },);
+  });
+  
 
   return (
     <div className="header">

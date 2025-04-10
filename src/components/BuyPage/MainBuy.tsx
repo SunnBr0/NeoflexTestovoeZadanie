@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import "../../style/MainBuy.css";
 import ItemsBuyDevice from "./ItemsBuyDevice";
 function MainBuy() {
+  const [finalSumDevice,setFinalSumDevice] =  useState(0)
   return (
     <>
       <div className="mainDevice">
@@ -10,18 +11,18 @@ function MainBuy() {
         </span>
         <div className="containerItemsDeviceAndPrice">
           <div className="containerItemsDevice">
-            {/* <ItemBuyDevice /> */}
-            <ItemsBuyDevice/>
-            {/* <ItemBuyDevice /> */}
+            <ItemsBuyDevice setFinalSum={setFinalSumDevice}/>
           </div>
           <div className="containerFinalPrice">
             <div className="cartBlockPrice">
               <div className="infoFinalPrice">
                 <span>ИТОГО</span>
-                <span>₽ 2 927</span>
+                <span>₽ {finalSumDevice}</span>
               </div>
             </div>
+            <a href="buyListDevice">
             <button>Перейти к оформлению</button>
+            </a>
           </div>
         </div>
       </div>

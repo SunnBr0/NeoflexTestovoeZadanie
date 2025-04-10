@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "../../style/ItemsBuyDevice.css";
 import { devicesItems } from "../../data/dataDevice";
+import { ValueClick } from "../../App";
 let parsedData: Array<[number, number]>;
-let a:number = 0;
 interface Device {
   id: number;
   img: string;
@@ -11,47 +11,61 @@ interface Device {
   rate: number;
   discountPrice?: number;
 }
-function ItemsBuyDevice() {
-  const [valueType, setValueType] = useState("");
+function ItemsBuyDevice({ setFinalSum }: any) {
+  const { handleClickCount }: any = useContext(ValueClick);
+  //handleClickCount("buy", device.id)
   const storedData = sessionStorage.getItem("deviceClickCounts");
   if (storedData) {
     parsedData = JSON.parse(storedData);
   }
-  // useEffect(()=>{
-  //   const storedData = sessionStorage.getItem("deviceClickCounts");
-  // if (storedData) {
-  //   parsedData = JSON.parse(storedData);
-  // }
-  // },)
-  function handleClickBuy(type: string,id:number) {
-    setValueType(type); // Устанавливаем тип действия
-    parsedData = parsedData.map(([currentId, value]) => {
-      if (currentId === id) {
-        if (valueType === "add") {
-          return [currentId, value + 1];
-        } else if (valueType === "remove" && value > 0) {
-          return [currentId, value - 1];
-        }
-      }
-      return [currentId, value];
-    }); // Убираем удаленные элементы
-    sessionStorage.setItem("deviceClickCounts", JSON.stringify(parsedData));
-    console.log(parsedData)
-    // // console.log(id)
-    // // setValueType(type)
-    // if (type === "add") {
-    //   // const updatedData  = parsedData.map(([idCurrent,value])=>{
-    //   //   if (idCurrent === id) {
-    //   //     return [idCurrent,value+1]
-    //   //   }
-    //   //   return [idCurrent,value]
-    //   // })
-    //   // sessionStorage.setItem("deviceClickCounts",JSON.stringify(updatedData))
-    // } else if(type === "remove"){
 
-    // }
-    // console.log(parsedData)
+  const calculateTotalSum = () => {
+    let total = 0;
+    // Пройдем по всем элементам в parsedData (массив типа [deviceId, count])
+    parsedData.forEach(([deviceId, count]) => {
+      // Проходим по всем категориям в devicesItems
+      Object.keys(devicesItems).forEach((category) => {
+        // Ищем устройство в текущей категории
+
+        const device = devicesItems[category].find(
+          (item) => item.id === deviceId
+        );
+        if (device) {
+          // Если устройство найдено, добавляем его цену к общей сумме
+          total += (device.discountPrice || device.price) * count;
+        }
+      });
+    });
+    // Обновляем итоговую сумму в родительском компоненте
+    setFinalSum(total);
+  };
+
+  function handleClickBuy(type: string, id: number) {
+    handleClickCount("buy", id);
+    parsedData = parsedData
+      .map(([currentId, value]): [number, number] => {
+        if (currentId === id) {
+          if (type === "add") {
+            return [currentId, value + 1];
+          } else if (type === "remove" && value > 0) {
+            return [currentId, value - 1];
+          } else if (type === "delete") {
+            return [currentId, 0];
+          }
+        }
+        return [currentId, value]; // Возвращаем неизменённую пару
+      })
+      .filter(
+        (item): item is [number, number] => item !== undefined && item[1] > 0
+      ); // Фильтруем undefined и те элементы, у которых value <= 0
+
+    console.log(parsedData);
+    sessionStorage.setItem("deviceClickCounts", JSON.stringify(parsedData));
+    calculateTotalSum();
   }
+  useEffect(() => {
+    calculateTotalSum();
+  }, []);
 
   return (
     <>
@@ -71,7 +85,9 @@ function ItemsBuyDevice() {
                             <div className="FuncButton">
                               <button
                                 className="Button"
-                                onClick={() => handleClickBuy("remove",item.id)}
+                                onClick={() =>
+                                  handleClickBuy("remove", item.id)
+                                }
                               >
                                 <svg
                                   width="14"
@@ -84,11 +100,10 @@ function ItemsBuyDevice() {
                                 </svg>
                               </button>
                               <span>{values}</span>
-                              {/* <span>{a}</span> */}
-                              
+
                               <button
                                 className="Button"
-                                onClick={() => handleClickBuy("add",item.id)}
+                                onClick={() => handleClickBuy("add", item.id)}
                               >
                                 <svg
                                   width="14"
@@ -123,7 +138,9 @@ function ItemsBuyDevice() {
                             </span>
                           </div>
                           <div className="itemBuyCarDeletePrice">
-                            <button onClick={()=>handleClickBuy("delete",item.id)}>
+                            <button
+                              onClick={() => handleClickBuy("delete", item.id)}
+                            >
                               <svg
                                 width="21"
                                 height="17"
