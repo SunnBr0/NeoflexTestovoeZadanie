@@ -54,6 +54,7 @@ function ItemsBuyDevice({ setFinalSum }: any) {
   }
   useEffect(() => {
     calculateTotalSum();
+    
   }, []);
 
   return (
