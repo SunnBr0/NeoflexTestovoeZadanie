@@ -39,7 +39,7 @@ const ViewDevice: React.FC<DeviceListProps> = ({ devices }) => {
             </div>
             <div className="rateBayDevice">
               <div className="blockRateDevice">
-                <img src="./assets/star.png" alt="" />
+                <img src="./assets/Star.png" alt="" />
                 <span className="rateDevice">{device.rate}</span>
               </div>
               <button
