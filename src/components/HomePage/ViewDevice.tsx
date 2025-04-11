@@ -18,7 +18,7 @@ const ViewDevice: React.FC<DeviceListProps> = ({ devices }) => {
   const { handleClickCount }: any = useContext(ValueClick);
   return (
     <>
-      {devices.map((device: Device, index: number) => (
+      {devices.map((device, index) => (
         <div key={index} className="itemDevice">
           <img src={device.img} alt={device.title} />
           <div className="infoDevice">

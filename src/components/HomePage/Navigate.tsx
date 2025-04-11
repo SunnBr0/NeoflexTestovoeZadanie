@@ -12,8 +12,8 @@ const Navigate: React.FC = () => {
   // на будущее,если лайки реализовывать
   const [likes, setLikes] = useState(0);
   const [valueBuy, setValueBuy] = useState(0);
+  const storedData = sessionStorage.getItem("deviceClickCounts");
   useEffect(() => {
-    const storedData = sessionStorage.getItem("deviceClickCounts");
     let sumCount = 0;
     if (storedData) {
       const parsedData: Array<[Device, number]> = JSON.parse(storedData);
@@ -23,7 +23,7 @@ const Navigate: React.FC = () => {
       
     }
     setValueBuy(sumCount);
-  });
+  },[storedData]);
   
 
   return (
